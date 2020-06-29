@@ -1,0 +1,95 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <div class="row">
+      <div class="col-md-6">
+        <center> <h8>DASHBOARD | SUMMARY </h8></center>
+              <center> <div class="col-md-8">
+              <div class="card" style="height: auto; width: 100%">
+               <center><img src="<%-profile-%>" alt="User" style="width:40%;">
+                <h6><%- username -%></h6>
+                <p class="title">Role <%- userrole -%></p>
+                <p><button>Contact</button></p>
+              </div>
+              </div></center>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Messages</span>
+                    <p>SMS:.<span style="font-weight: bold; color: black;"><%- messages -%> </span> </p>
+                    <p> Emails: <span style="font-weight: bold; color: black;"><%-emails-%></span></p>
+                  </div>
+                  <div class="card-action" style="font-size: small;">
+                    <a href="/messages">View More</a><br>
+                    <a href="/sentmessage">Sent Message</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+<div class="col-md-4">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Staff </span>
+              <p>Teachers: <span style="color:black; font-weight: bold;"><%- teachers -%> </span> </p>
+              <p>Non Teaching: <span style="color:black; font-weight: bold;"><%- others -%> </span> </p>
+            </div>
+            <div class="card-action" style="font-size: small;">
+              <a href="/addstaff">Add Staff</a><span><a href="/viewstaffs">All Staff</a></span></br>
+              <a href="/viewstaffs">Teachers</a><span><a href="/viewstaffs"> Other Staffs</a></span></br>
+              <a href="/clases">Add Class</a><span><a href="/terms">Terms</a></span></br>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="col-md-4">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"> Students<span></span style="color:primary;"><strong> Totals: <%-totst-%></strong></span>
+              <p>Male: <span style="color:black; font-weight:bold;"><%- mstudents -%> </span> </p>
+              <p>Female <span style="color:black; font-weight:bold;"><%- fstudents -%> </span> </p>
+            </div>
+            <div class="card-action" style="font-size: small;">
+              <a href="/students">View Students</a><span><a href="/subjects">Subjects</a></span></br>
+              <a href="/addstudent">Enrol Student</a> <span><a href="/allclases">Classes</a></span></br>
+              <a href="/promotestudent">Promote</a> <span><a href="/generatereport">Report</a></span></br>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="col-md-4">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">FINANCE</span>
+              <p>Registered: <span style="font-weight: bold; color: black;"><%-paidfees -%> </span> </p>
+              <p>Active: <span style="font-weight: bold; color: black;"><%- balance -%> </span> </p>
+            </div>
+            <div class="card-action" style="font-size: small;">
+              <a href="/addfees">Maintain Fees</a></br>
+              <a href="/viewfees">View Fees</a><span><a href="/addterm">Add Term</a></span></br>
+              <a href="/calender">Calender of events</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+    <%- include ('../templates/footer'); -%>
+</div>

@@ -1,0 +1,40 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+<div class="row">
+    <table class="heightlight responsive-table">
+        <thead>
+        <tr>
+            <th>Fee Code</th>
+            <th>Term Code</th>
+            <th>Class Code</th>
+            <th>Tuition</th>
+            <th>Boarding</th>
+            <th>Remidial</th>
+            <th>Transport</th>
+            <th>Meals</th>
+            <th>Others</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% fees.forEach(function(fee){ %>
+            <tr>
+                <td><%= fee.feecode %></td>
+                <td><%= fee.termcode %></td>
+                <td><%= fee.classcode %></td>
+                <td><%= fee.tuititonfee %></td>
+                <td><%= fee.boardingfee %></td>
+                <td><%= fee.remidialfee %></td>
+                <td><%= fee.transportfee %></td>
+                <td><%= fee.mealfee %></td>
+                <td><%= fee.othersfee %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+        <%- include('../templates/footer') -%>
+    </div>
+    </div>

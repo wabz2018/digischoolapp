@@ -1,0 +1,56 @@
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <center> <%- hd-%></center> 
+<div class="row">
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Send SMS</h4></center> 
+    <form action="/controllers/addsms-controller" method="POST">
+        <div class="form-group">
+            <label for="stafftype">Select Group:</label>
+            <select class="form-control" name="receivergroup">
+             <option value="teachers">Teachers</option>
+             <option value="parents">Parents</option>
+             <option value="staff">General Staff</option>
+             <option value="general">Other Non Staff</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Message:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1"
+             rows="4" name="message" minlength="40" maxlength="135">
+            </textarea>
+    
+        </div>
+        <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+            class="fa fa-save"></i>Send SMS</button>
+        </form>
+</div>
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">SEND EMAIL</h4></center> 
+    <form action="/sendbulkemails" method="POST">
+    <div class="form-group">
+        <label for="stafftype">Select Group:</label>
+        <select class="form-control" name="receivergroup">
+         <option value="teachers">Teachers</option>
+         <option value="parents">Parents</option>
+         <option value="staff">General Staff</option>
+         <option value="general">Other Non Staff</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Message:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1"
+         rows="4" name="sms" minlength="40" maxlength="135">
+        </textarea>
+
+    </div>
+    <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+        class="fa fa-save"></i>Send Email</button>
+    </form> 
+</div>
+</div>
+<%- include('../templates/footer') -%>
+
+
+
+

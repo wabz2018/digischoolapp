@@ -1,0 +1,51 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+<div class="row">
+    <div class="col-md-4">
+<%- include('../templates/leftnav') -%>
+    </div>
+
+    <div class="col-md-4">
+       <!-- <%- include('../templates/rightnav') -%> -->
+       <img src="/images/banner.png" class="brand-logo">
+    </div>
+    <div class="col-md-4" style="text-align: right;">
+        <%- include('../templates/rightnav') -%>
+    </div>
+</div>
+<div class="row">
+    <a href="/register" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+    <table class="heightlight responsive-table">
+        <thead>
+        <tr>
+            <th>STAFF ID</th>
+            <th>FULL NAMES</th>
+            <th>EMAIL</th>
+            <th>Phone Number</th>
+            <th>ROLE</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% staffs.forEach(function(staff){ %>
+            <tr>
+                <td><%= staff.staffid %></td>
+                <td><%= staff.fullnames %></td>
+                <td><%= staff.email %></td>
+                <td><%= staff.phone %></td>
+                <td><%= staff.stafftype %></td>
+                <td>
+                    <a href="viewstaff/<%= staff.stafffid %>" class="btn btn-sm btn-primary">View</a>
+                    <a href="delete/<%= staff.staffid %>" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+        <%- include('../templates/footer') -%>
+    </div>
+    </div>

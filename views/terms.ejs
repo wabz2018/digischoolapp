@@ -1,0 +1,34 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+<div class="row">
+    <table class="heightlight responsive-table">
+        <thead>
+        <tr>
+            <th>Term Code</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+        </tr>
+        </thead>  
+        <tbody>
+        <% terms.forEach(function(term){ %>
+            <tr>
+                <td><%= term.termcode %></td>
+                <td><%= term.termname %></td>
+                <td><%= term.termyear %></td>
+                <td><%= term.startdate %></td>
+                <td><%= term.enddate %></td>
+                <td><%= term.status %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+        <%- include('../templates/footer') -%>
+    </div>
+    </div>

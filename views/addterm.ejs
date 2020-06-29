@@ -1,0 +1,39 @@
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <center> <%- hd-%></center> 
+<div class="row">
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Main Details</h4></center> 
+    <form action="/controllers/addterms-controller" method="POST">
+        <div class="form-group">
+            <label>Term Name</label>
+            <input type="text" name="termname" class="form-control input-sm"
+                placeholder="Term One">
+        </div>
+        <div class="form-group">
+            <label>Term Year</label>
+            <input type="number"name="termyear" class="form-control input-sm" min="2020" min="2099"
+                placeholder="YYYY">
+        </div>
+</div>
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Commencement</h4></center>
+   <div class="form-group">
+    <label>Start Date</label>
+    <input type="date" id="startdate" name="startdate" class="form-control" value="{{ Date.now() | date("Y-m-d") }}" />
+</div>
+
+<div class="form-group">
+    <label>End Date</label>
+    <input type="date" id="enddate" name="enddate" class="form-control" value="{{ Date.now() | date("Y-m-d") }}" />
+</div>
+    <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+        class="fa fa-save"></i>Add Term</button>
+    </form> 
+</div>
+</div>
+<%- include('../templates/footer') -%>
+
+
+
+

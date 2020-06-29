@@ -1,0 +1,27 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+<div class="row">
+    <a href="/addsubject" class="btn btn-sm btn-primary">Add  Subject</a><br/><br/>
+    <table class="heightlight responsive-table">
+        <thead>
+        <tr>
+            <th>SUBJECT CODE</th>
+            <th>SUBJECT NAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% subjects.forEach(function(subject){ %>
+            <tr>
+                <td><%= subject.subjectcode %></td>
+                <td><%= subject.subjectname %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+        <%- include('../templates/footer') -%>
+    </div>
+    </div>

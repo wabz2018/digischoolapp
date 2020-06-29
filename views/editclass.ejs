@@ -1,0 +1,45 @@
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <div class="row">
+        <div class="col-md-4">
+            <%- include('../templates/leftnav') -%>
+        </div>
+
+        <div class="col-md-4">
+            <!-- <%- include('../templates/rightnav') -%> -->
+            <img src="/images/banner.png" class="brand-logo">
+        </div>
+        <div class="col-md-4" style="text-align: right;">
+            <%- include('../templates/rightnav') -%>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/addclass" class="btn btn-sm btn-primary">Add User</a><br /><br />
+            <a href="/addteacher" class="btn btn-sm btn-primary">Add Teacher</a><br /><br />
+            <form action="/updateclass" method="post">
+                <input type="hidden" value="<%= clases.classcode %>" name="classcode">
+                <div class="form-group">
+                    <label for="firstname"> Class Name:</label>
+                    <input type="text" class="form-control"
+                 value="<%= clases.classname %>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="classtearcher">Available Teacher:</label>
+                    <select class="form-control" name="classtearcher">
+                        <option value="" >--Select--</option>
+                        <% for (var i=0; i<teachers.length; i++){%>
+                        <option value<%= teachers[i].staffid %>> <%= teachers[i].staffid %>
+                        </option>
+                        <% }%>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+    <%- include('../templates/footer') -%>
+</div>
+</div>

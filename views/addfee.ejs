@@ -1,0 +1,71 @@
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <center> <%- hd-%></center> 
+<div class="row">
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Main Fees</h4></center> 
+    <form action="/controllers/addfees-controller" method="POST">
+        <div class="form-group">
+            <label for="termcode">--Select Term--:</label>
+            <select class="form-control" name="termcode">
+                <option value="">--Select Term--</option>
+                <% for (var i=0; i<terms.length; i++){%>
+                    <option value<%= terms[i].termcode %>><%= terms[i].termcode %>
+                    </option>
+                    <% }%>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="classcode">--Select Class--:</label>
+            <select class="form-control" name="classcode">
+                <option value="">--Select Class--</option>
+                <% for (var i=0; i<clases.length; i++){%>
+                    <option value<%= clases[i].classcode %>><%= clases[i].classcode %>
+                    </option>
+                    <% }%>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Tuition Fees</label>
+            <input type="number" min="0.00" max="500000.00" step="0.01" name="tuititonfee" class="form-control input-sm"
+                placeholder="KSh.">
+        </div>
+        <div class="form-group">
+            <label>Boarding Fees</label>
+            <input type="number" min="0.00" max="500000.00" step="0.01"name="boardingfee" class="form-control input-sm"
+                placeholder="KSh.">
+        </div>
+     
+</div>
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Other fees</h4></center>
+   <div class="form-group">
+    <label>Meals Fees</label>
+    <input type="number" min="0.00" max="500000.00" step="0.01" name="mealfee" class="form-control input-sm"
+        placeholder="Ksh" minlength="10" maxlength="16">
+</div>
+   <div class="form-group">
+    <label>Remedial Fees</label>
+    <input type="number" min="0.00" max="500000.00" step="0.01" name="remidialfee" class="form-control input-sm"
+        placeholder="KSh. ">
+</div>
+<div class="form-group">
+    <label>Transport Fees</label>
+    <input ttype="number" min="0.00" max="500000.00" step="0.01" name="transportfee" class="form-control input-sm"
+        placeholder="Ksh.">
+</div>
+<div class="form-group">
+    <label>PTA Fees</label>
+    <input type="number" min="0.00" max="500000.00" step="0.01" name="othersfee" class="form-control input-sm"
+        placeholder="Ksh">
+</div>
+    <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+        class="fa fa-save"></i>Add Fee</button>
+    </form> 
+</div>
+</div>
+<%- include('../templates/footer') -%>
+
+
+
+

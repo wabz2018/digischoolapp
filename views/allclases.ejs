@@ -1,0 +1,36 @@
+  
+<%- include('../templates/headerindex') -%>
+<div class="content">
+<div class="row">
+    <table class="heightlight responsive-table">
+        <thead>
+        <tr>
+            <th>CLASS CODE</th>
+            <th>CLASS NAME</th>
+            <th>CLASS TEACHER</th>
+            <th>CAPACITY</th>
+            <th>ENROLLED</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% clases.forEach(function(clas){ %>
+            <tr>
+                <td><%= clas.classcode %></td>
+                <td><%= clas.classname %></td>
+                <td><%= clas.classtearcher %></td>
+                <td><%= clas.capacity %></td>
+                <td><%= clas.currentcapacity %></td>
+                <td>
+                    <a href="updateteacher/<%= clas.classcode %>" class="btn btn-sm btn-primary">Update Class Teacher</a>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="footer" style="border-color: blue; height: 10px; width: auto; margin: 2px;">
+        <%- include('../templates/footer') -%>
+    </div>
+    </div>
