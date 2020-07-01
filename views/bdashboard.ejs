@@ -1,0 +1,111 @@
+<%- include('../templates/headerindex') -%>
+<div class="content">
+    <center> <%- hd-%></center> 
+<div class="row">
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">MAKE PAYMENT</h4></center> 
+    <form action="/controllers/addfeepayment-controller" method="POST">
+        <div class="form-group">
+            <label for="studentid">Select Student:</label>
+            <select class="form-control" name="studentid">
+        <option value="">--studentid--</option>
+            <% for (var i=0; i<students.length; i++){%>
+              <option value<%= students[i].studentid %>> <%= students[i].studentid %>
+              </option>
+              <% }%>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="feecode">Feecode :</label>
+          <select class="form-control" name="feecode">
+            <option value="">--feecode--</option>
+            <% for (var i=0; i<fees.length; i++){%>
+              <option value<%= fees[i].feecode %>> <%= fees[i].feecode %>
+              </option>
+              <% }%>
+          </select>
+      </div>
+      <div class="form-group">
+<label for="amount">Amount:</label>
+<input type="number" min="0.00" max ="2000000.00" step="any" required>
+
+      </div>
+        <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+            class="fa fa-save"></i>Submit</button>
+        </form>
+</div>
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">VIEW PAYMENTS</h4></center> 
+    <form action="/viewfeepayment" method="POST">
+      <div class="form-group">
+        <label for="classcode">--Select Class:</label>
+        <select class="form-control" name="classcode">
+        <% for (var i=0; i<clases.length; i++){%>
+          <option value<%= clases[i].classcode %>> <%= clases[i].classcode %>
+          </option>
+          <% }%>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="viewdate">Date:</label>
+<input type="date" name="viewdate" hidden>
+    </div>
+    <div class="form-group">
+      <label for="studentid">--Select Student--:</label>
+      <select class="form-control" name="studentid">
+        <% for (var i=0; i<students.length; i++){%>
+          <option value<%= students[i].studentid %>> <%= students[i].studentid %>
+          </option>
+          <% }%>
+      </select>
+  </div>
+  <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+    class="fa fa-save"></i>Submit</button>
+</form>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <center><h4 class="btn btn-primary">SEARCH PAYMENT</h4></center> 
+     <form action="/search" method="POST">
+     <div class="form-group">
+         <input type="text" class="form-control" name="studentid" required placeholder="Student ID">
+     </div>
+     <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+         class="fa fa-save"></i>Submit</button>
+     </form> 
+ </div>
+<div class="col-md-6">
+   <center><h4 class="btn btn-primary">Generate Report</h4></center> 
+    <form action="/generatefeeReport" method="POST">
+    <div class="form-group">
+        <label for="studentid">Select Class:</label>
+        <select class="form-control" name="studentid">
+          <option value="">--classcode--</option>
+          <% for (var i=0; i<clases.length; i++){%>
+            <option value<%= clases[i].classcode %>> <%= clases[i].classcode %>
+            </option>
+            <% }%>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="studentid">--Select Student--:</label>
+      <select class="form-control" name="studentid">
+        <option value="">--studentid--</option>
+        <% for (var i=0; i<students.length; i++){%>
+          <option value<%= students[i].studentid %>> <%= students[i].studentid %>
+          </option>
+          <% }%>
+      </select>
+  </div>
+    <button type="submit" name="add" class="btn btn-sm btn-success pull-right"><i
+        class="fa fa-save"></i>Generate Report</button>
+    </form> 
+</div>
+</div>
+
+<%- include('../templates/footer') -%>
+
+
+
+

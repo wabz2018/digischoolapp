@@ -673,6 +673,43 @@ app.get('/bulkAirtime', (req, res) => {
 
 });
 
+//staff
+app.get('/staffreport',(req,res)=>{
+	if(req.session.loggedin)
+	{
+	connection.query("select * from staff",(err, rows)=>{
+ if(err) throw err;
+   res.render("staffreport", 
+   {staffs: rows}, (err, data) => {
+	   if (err) {
+		   res.send(err);
+	 } else {
+		 let options = {
+			 "height": "11.25in",
+			 "width": "8.5in",
+			 "header": {
+				 "height": "20mm"
+			 },
+			 "footer": {
+				 "height": "20mm",
+			 },
+		 };
+		 pdf.create(data, options).toFile("sreport.pdf", (err, data)=> {
+			 if (err) {
+				 res.send(err);
+			 } else {
+				 res.send("File created successfully");
+				 //redirect('home');
+			 }
+		 });
+	 }
+   });
+});
+	}
+	else{
+		res.sendFile(__dirname+'/'+'login.html');
+	}
+   });
 //error handling 404
 app.use((req, res, next) => {
 	if (req.session.loggedin) {
